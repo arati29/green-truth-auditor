@@ -1,4 +1,4 @@
-🛡️ Green-Truth Auditor
+🌿 AI Green-Truth Auditor
 An AI-powered tool to detect greenwashing in marketing claims using keyword analysis and Transformer-based Zero-Shot Classification.
 
 🚀 FEATURES USED :
