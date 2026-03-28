@@ -2,7 +2,6 @@ import pandas as pd
 
 #start span
 df = pd.read_csv("certified_brands.csv")
-df.columns.values[0] = "brand_name"
 
 #span 5
 search_name = input("Enter brand to audit : ")
