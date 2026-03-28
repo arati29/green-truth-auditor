@@ -1,6 +1,37 @@
 import streamlit as st
 from transformers import pipeline
 
+st.markdown("""
+<style>
+.stApp {
+    background-color: #f0fff4;
+}
+
+h1, h2, h3 {
+    color: #2d6a4f;
+}
+
+.stButton>button {
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.stButton>button:hover {
+    background-color: #27ae60;
+}
+
+.stTextInput>div>div>input {
+    border: 2px solid #2ecc71;
+}
+
+.stTextArea textarea {
+    border: 2px solid #2ecc71;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # --- 1. AI MODEL ---
 @st.cache_resource
 def load_ai_model():
@@ -13,8 +44,8 @@ buzzwords = [
     {"word": "eco-friendly", "category": "Vague Descriptors"},
     {"word": "sustainable", "category": "Vague Sustainability Terms"},
     {"word": "natural", "category": "Vague Descriptors"},
-    {"word": "biodegradable", "category": "Unverified Claims"},
-    {"word": "carbon neutral", "category": "Unverified Claims"},
+    {"word": "biodegradable", "category": "Misleading Technical Terms"},
+    {"word": "non-toxic", "category": "Unverified Claims"},
     {"word": "green", "category": "Vague Descriptors"},
 ]
 
@@ -31,20 +62,25 @@ certified_brands = {
     "patagonia": "B-corp",
     "allbirds": "B-corp",
     "organic basics": "GOTS",
-    "pangaia": "B-corp"
+    "pangaia": "B-corp",
+    "Nike": "LEED",
+    "Apple": "EPEAT",
+    "Tesla": "LEED"
 }
 
 # --- 3. INITIALIZE ---
-st.set_page_config(page_title="Green-Truth Auditor", page_icon="🛡️")
+st.set_page_config(page_title="Green-Truth Auditor", page_icon="🌿")
 
 classifier = load_ai_model()
 
 # --- 4. UI ---
-st.title("🛡️ AI Green-Truth Auditor")
+st.title("🌿 AI Green-Truth Auditor")
 st.markdown("### Semantic Transparency Check for Marketing")
 
-brand_input = st.text_input("Enter Brand Name:", placeholder="e.g. Patagonia")
+brand_input = st.text_input("Enter Brand Name:", placeholder="e.g. Apple")
+brand_input.title
 desc_input = st.text_area("Paste Product Description:", placeholder="e.g. Our natural process is eco-friendly...")
+desc_input.title
 
 # --- 5. RUN ANALYSIS ---
 if st.button("🚀 Run AI Audit"):
@@ -95,7 +131,7 @@ if st.button("🚀 Run AI Audit"):
 
         # --- VERDICT ---
         if final_score >= 80:
-            st.success("Verdict: **LIKELY TRUSTWORTHY**")
+            st.success("🌱Verdict: **LIKELY TRUSTWORTHY**")
         elif final_score >= 50:
             st.warning("Verdict: **PROCEED WITH CAUTION**")
         else:
