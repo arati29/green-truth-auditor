@@ -78,9 +78,7 @@ st.title("🌿 AI Green-Truth Auditor")
 st.markdown("### Semantic Transparency Check for Marketing")
 
 brand_input = st.text_input("Enter Brand Name:", placeholder="e.g. Apple")
-brand_input.title
 desc_input = st.text_area("Paste Product Description:", placeholder="e.g. Our natural process is eco-friendly...")
-desc_input.title
 
 # --- 5. RUN ANALYSIS ---
 if st.button("🚀 Run AI Audit"):
