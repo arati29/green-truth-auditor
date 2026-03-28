@@ -1,9 +1,40 @@
 🛡️ Green-Truth Auditor
 An AI-powered tool to detect greenwashing in marketing claims using keyword analysis and Transformer-based Zero-Shot Classification.
 
-🚀 Features
-Keyword Matching: Flags specific vague terms like "eco-friendly" or "natural" based on custom CSV databases.
+🚀 FEATURES USED :
 
-AI Semantic Analysis: Uses the facebook/bart-large-mnli model to understand the context of a claim, even if specific keywords are missing.
+🚩 Feature 1: Keyword Detection
 
-Dynamic Scoring: Calculates a trust score out of 100 based on detected risks.
+Point to report section:
+
+“The system detects vague words like ‘eco-friendly’ and ‘natural’”
+
+🤖 Feature 2: AI Analysis
+
+Point to AI result:
+
+“AI identifies whether the claim is vague or misleading using NLP model”
+
+📊 Feature 3: Trust Score
+
+Point to score:
+
+“A score out of 100 is generated based on transparency”
+
+⚠️ Feature 4: Verdict System
+
+Point to verdict:
+
+“Users get a clear decision — trustworthy or risky”
+
+📄 Feature 5: Detailed Report
+
+Point to report:
+
+“Each deduction is clearly explained”
+
+🏅 Feature 6: Certified Brand Boost
+
+If shown:
+
+“Certified brands get bonus credibility points”
